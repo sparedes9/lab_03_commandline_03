@@ -18,7 +18,7 @@ We're going to be writing a shell script.  First, though... let's figure out wha
 What command did you use, and what was its output?
 ----------
 
-
+date
 
 ==========
 2. Print out a calendar for this month.
@@ -26,7 +26,14 @@ What command did you use, and what was its output?
 What command did you use, and what was its output?
 ----------
 
-
+ent-v314-010:Desktop student$ cal
+   September 2016
+Su Mo Tu We Th Fr Sa
+             1  2  3
+ 4  5  6  7  8  9 10
+11 12 13 14 15 16 17
+18 19 20 21 22 23 24
+25 26 27 28 29 30
 
 ==========
 3. Go to your home directory.  Verify that you're in your home directory.
@@ -34,7 +41,9 @@ What command did you use, and what was its output?
 What commands did you use to do this?
 ----------
 
-
+ent-v314-010:Desktop student$ cd ~/Desktop
+ent-v314-010:~ student$ pwd
+/Users/student/Desktop
 
 ==========
 4. Create an empty file called copy_to_backup.sh.  Verify that the file exists.
@@ -42,7 +51,9 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+ent-v314-010:Desktop student$ ls
+Sound Effects Server	copy_to_backup.sh	mtec1002-lab-03.tar.gz
+Student Temporary Work	mtec1002-lab-03
 
 ==========
 5. What are the permissions on your copy_to_backup.sh.
@@ -50,7 +61,8 @@ What commands did you use to do this?
 What command did you use to find the permissions?
 ----------
 
-
+ent-v314-010:Desktop student$ ls -l copy_to_backup.sh 
+-rw-r--r--  1 student  staff  0 Sep 14 12:26 copy_to_backup.sh
 
 ==========
 6. Change the permissions so that this file is executable by the user.  Verify the new permissions.
@@ -58,7 +70,9 @@ What command did you use to find the permissions?
 What commands did you use to do this?  What was the output?
 ----------
 
-
+ent-v314-010:Desktop student$ chmod u+x copy_to_backup.sh 
+ent-v314-010:Desktop student$ ls -l copy_to_backup.sh 
+-rwxr--r--  1 student  staff  0 Sep 14 12:26 copy_to_backup.sh
 
 ==========
 7. Try executing the file!
@@ -68,7 +82,7 @@ $ ./copy_to_backup.sh
 What command did you use to try to execute the file?  What happens?
 ----------
 
-
+NOTHING
 
 ==========
 8. Open the file with nano
@@ -76,7 +90,7 @@ What command did you use to try to execute the file?  What happens?
 What command did you use to do this?
 ----------
 
-
+nano copy_to_backup.sh
 
 ==========
 9. In your file, write the following commands:
@@ -88,7 +102,12 @@ c. print out "I'm done backing up"
 Write out the code in your file below...
 ----------
 
+#!/bin/bash
 
+mkdir -p backup
+cp *.txt backup
+
+echo "I'm done backing up"
 
 ==========
 10. Create a directory in your home called test
@@ -99,7 +118,7 @@ Write out the code in your file below...
 What commands did you use to do this?
 ----------
 
-
+cd & touch
 
 ==========
 12. Move the script that you created into this directory.
@@ -107,7 +126,8 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+cd ..
+mv
 
 ==========
 13. Run your script.
@@ -115,10 +135,14 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+./copy_to_backup.sh
 
 ==========
 14. Verify that a backup folder was created in your home directory... with copies of the files present.
 
 What commands did you use to do this?  Show the output.
 ----------
+ent-v314-010:test student$ ls
+1.txt			2.txt			backup			copy_to_backup.sh
+ent-v314-010:test student$ pwd
+/Users/student/Desktop/test
