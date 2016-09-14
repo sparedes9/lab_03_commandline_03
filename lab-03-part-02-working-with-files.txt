@@ -187,18 +187,21 @@ Q - Quits back to prompt
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
 
-LESS - 
-MORE - 
-CAT - 
-TAIL - 
-HEAD - 
+LESS - Brings up some of the file to read
+MORE - Brings up most of the file to read
+CAT - Brings up sections of the file
+TAIL - Brings up the end of the file
+HEAD - Brings up the beginning of the file
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
 
-
+ent-v314-010:other student$ wc pg1232.txt 
+    5063   52639  305864 pg1232.txt
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+ent-v314-010:other student$ wc -l pg1232.txt 
+    5063 pg1232.txt
